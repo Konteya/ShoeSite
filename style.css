@@ -1,0 +1,691 @@
+*{
+    font-family: 'Merriweather Sans', sans-serif;
+    /* background-color: white; */
+}
+
+body{
+    /* background-color: white;
+    overflow: hidden; */
+    /* overflow-y:scroll; */
+    scroll-behavior: smooth;
+    background: radial-gradient(#3c475d,#0b0b0b);
+    /* scroll-snap-type: y mandatory; */
+}
+
+/* ---------------- navigation bar----------------------- */
+
+
+.navbar-brand{
+    margin-left: 1%;
+}
+
+.heading{
+    position: relative;
+    padding-bottom: 0.5%;
+    margin: 0 0 0 -0.5%;
+    white-space: nowrap;
+}
+
+.heading::after{
+    content: '';
+    background: #e97b6d;
+    width: 90%;
+    /* height: 5px; */
+    height: 15%;
+    border-radius: 5px;
+    position: absolute;
+    bottom: -10%;
+    left: 55%;
+    transform:translateX(-50%);
+}
+
+.heading-shop{
+    position: relative;
+    padding-bottom: 0.5%;
+    margin: 0 0 0 -0.5%;
+    white-space: nowrap;
+}
+
+.heading-shop::after{
+    content: '';
+    background: #e97b6d;
+    width: 5%;
+    /* height: 5px; */
+    height: 15%;
+    border-radius: 5px;
+    position: absolute;
+    bottom: -10%;
+    left: 50%;
+    transform:translateX(-50%);
+}
+
+.navbar-nav  a{
+    color: rgb(54, 47, 47);
+    font-weight: 500;
+    font-size: 18px;
+    border-radius: 25px; 
+    transition: background-color .75s, color .5s ease-in-out;
+   
+}
+/* .navbar-nav li a.nav-link::after {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    background-color: #5c99ed;
+    width: 0%;
+    content: "";
+    height: 4%;
+    transition: all 0.5s;
+  }
+  .navbar-nav li a.nav-link:hover::after {
+    width: 50%;
+  } */
+
+.navbar-nav  a:hover{
+    color: #ff523b;
+    font-weight: 600;
+    background-color:rgba(204, 203, 203, 0.242) ; 
+   
+}
+
+.nav-item .dropdown .dropdown-menu{
+    transform: all 0.4s ease;
+}
+
+
+ /* ---------------aside and backdrop---------------- */
+
+aside{
+    position: fixed;
+    transition: right .4s ease ;
+    right: -320px;
+    width: 15%;
+    background-color: #fff;
+    padding: 4% 4%;
+    z-index: 1040;  /* cause fixed-top has z-index: 1030*/
+    height: 100vh;
+}
+
+aside a{
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    padding: 5% 0;
+    font-size: 90%;
+    font-weight: 500;
+}
+
+aside.active{
+    right: 0;
+}
+aside button.close{
+    font-size: 24px;
+    border: 0;
+    background-color: transparent;
+    position: absolute;
+    top: 2%;
+    right: 4%;
+    /* padding: 10px; */
+    font-family: sans-serif;
+    font-weight: 100;
+    border-radius: 25px;
+    transition: background-color .5s;
+}
+aside button.close:hover{
+    background-color: rgba(182, 182, 182, 0.301);
+}
+
+.backdrop{
+    position: fixed;
+    inset:0;
+    background-color: rgba(0,0,0,.35);
+    backdrop-filter: blur(5px);
+    display: none;
+    z-index: 1040;
+}
+
+.backdrop.active{
+    display: block;
+}
+
+
+.photo{
+    /* border: 1px solid yellow;
+    border-radius: 25px; */
+    /* padding: 10rem 3rem 10rem 15rem; */
+    /* margin: 5em; */
+    padding: 1rem 3rem 0 15rem;
+
+}
+
+/* --------------carousel slideshow part----------------- */
+
+.carousel-item{
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    position: relative;
+    background-position: center ;
+    background-size: 75%;
+    background-repeat: no-repeat;
+}
+.carousel-item .container-fluid{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-bottom: 5%;
+}
+.carousel-item p{
+    font-size: 1.2rem;
+    text-align: left;
+    color: #fff;
+    /* padding-top: 60rem; */
+    /* padding-left: 5rem; */
+    /* padding-bottom: 1rem; */
+}
+#myCarousel .overlay-image{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top:0;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    opacity: 0.5;
+}
+#myCarousel  .buyC{
+    background-color: white;
+    color: #000;
+    font-weight: 600;
+   
+}
+#myCarousel  a.buyC{   
+    text-decoration: none;
+    padding: .7rem 2.15rem;
+    border-radius: 10px; 
+    transition: background-color .75s, color .5s;
+    /* filter: drop-shadow(0 0 0.3rem rgb(9, 161, 255)); */
+}   
+#myCarousel a.buyC:hover{
+    color: white;
+    font-weight: 600;
+    background-color: #605d5d;
+    /* color:rgb(251, 252, 255); */
+}
+
+
+.tag{
+    opacity: 0;
+    transform: translate(0,5vh);
+    transition: all 2s;
+}
+.tag.visible {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+section{
+    /* overflow-y:scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: y; 
+    max-height: 100%;
+    background: radial-gradient(#6699ff,#ccddff); */
+    height: 100vh;
+    overflow: hidden;
+} 
+
+
+/* ---------------- shop section ----------------- */
+
+#shop{
+    align-items: center;
+    padding-top: 5rem ;
+    /* background: radial-gradient(#3c475d,#0b0b0b); */
+    overflow-wrap: auto;
+    /* background-color: #000; */
+}
+#shop .buy{
+    margin-bottom: 1rem;
+}
+#shop .buy a{   
+    background-color: #f4f4f4;
+    border: 1px solid #353F52;
+    font-weight: 600;
+    text-decoration: none;
+    color: #000;
+    padding: .5rem 1.5rem;
+    border-radius: 10px; 
+    transition: background-color .75s, color .5s;
+    filter: drop-shadow(0 0 .5rem rgba(174, 172, 172, 0.53));
+    /* filter: drop-shadow(0 0 0.3rem rgb(9, 161, 255)); */
+}   
+#shop .buy a:hover{
+    font-weight: 600;
+    background-color: #605d5d;
+    color:white
+    /* color:rgb(251, 252, 255); */
+}
+.owl-carousel{
+    /* margin-top: 1rem; */
+    margin: 1rem 1rem 0 0 ;
+    padding: 0rem;
+}
+/* .owl-stage{
+    margin-top: -.5%;
+} */
+
+#shop .owl-carousel .owl-item, .owl-item.cloned{
+    margin-right: 2rem !important;
+}
+
+.owl-carousel .item{
+    transform: scale(.94);
+}
+.card img{
+    height: 300px;
+    width: 300px;
+}
+.card{
+    /* height: 400px; */
+    padding: 3rem 0 1rem 0;            /* added padding new*/
+    background-color: #000;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    /* border-radius: 2em; */
+    background-color: #6699ff;
+    transition-duration: .45s ;
+    filter: drop-shadow(0 0 .5rem rgb(190, 175, 244));
+}
+.card:hover{
+    filter: drop-shadow(0 0 0.5rem rgb(9, 161, 255));
+    transform:  scale(1.1);
+    /* transform: translateY(-1%); */
+    border:none;
+    text-align: center;
+    border-top-left-radius: 5em;
+    border-top-right-radius: 5em;
+    border-bottom-left-radius: 5em;
+    border-bottom-right-radius: 5em;
+    
+   
+}
+.card-title{
+    font-weight: 600;
+}
+.card-text{
+    color:rgb(0, 0, 0);
+}
+.card-body{
+    /* font-weight: 600; */
+    /* background-color: rgb(255, 255, 255); */
+    padding: 1rem;      /* ----------added padding between the buy now----------------- */
+}
+.card-body .card-title {
+    color:rgb(79, 164, 126);
+}
+
+
+/* --------------- vision and goals section ----------------- */
+
+/* #vision{
+    background: radial-gradient(#7e9cd9,#9fadc9);
+    background: radial-gradient(#3c475d,#0b0b0b);
+} */
+#vision .description, #goals .description{
+    color: #fff;
+    font-size: 1.2rem;
+    padding-top: 8rem;
+    filter: drop-shadow(0 0 0.75em rgb(4, 96, 108));
+    font-weight: 500;
+}
+#goals .description ul li{
+    font-size: 1.5rem;
+}
+
+.company-logo{
+    background: transparent;
+    padding-top: 25%;
+    padding-left: 20%;
+    height: 70vh;
+    /* filter: drop-shadow(0 0 0.75em rgb(173, 172, 172)); */
+}
+.company-logo1{
+    filter: drop-shadow(0 0 0.75em rgb(173, 172, 172));
+}
+/* #goals{
+    background: radial-gradient(#3c475d,#0b0b0b);
+    background: radial-gradient(#3c475d,#000000);
+} */
+#goals ul li{
+    padding-top: 3%;
+    font-family: 'Times New Roman', Times, serif;
+}
+/* #goal .description h1{ 
+    font-family: Arial, Helvetica, sans-serif;
+} */
+
+
+/* ------------------ pictures and desctiption from 1st draft -------------------- */
+
+.picture{
+    background: transparent;
+    /* height: 100vh; */
+}
+.picture1{ 
+    background: radial-gradient(#6699ff,#ccddff); 
+}
+.picture2{
+    background: radial-gradient(#cf6e6e,#ffc5c5);
+}
+.picture3{
+    background: radial-gradient(#cb9696,#cfcdcd);
+}
+.picture4{
+    background: radial-gradient(#e04848,#af6e6e);
+}
+.picture4 #picture41{
+    margin-left: 10%;
+}
+
+.description{
+    text-align: left;
+    /* padding: 15% 0 0 0 ; */
+    padding: 5em 0 0 0;  
+    margin-left: 0;
+    /* color: yellow; */
+}
+
+p{
+    color: rgb(42, 62, 186);
+}
+
+.description h1{
+    color: #fff;
+    font-weight: 600;
+}
+.description a{
+    text-decoration: none;
+    display: inline-block;
+    background: #ff523b;
+    color: white;
+    padding: 1% 5%;
+    margin: 30px 0;
+    border-radius: 30px;
+    transition: background 0.5s;
+}
+.description a:hover{
+    background: #d3d0eb;
+    color: #fff;
+}
+.description small{
+    font-weight: 600;
+   
+}
+.picture2 .description small{
+    color: #c12e1d;
+}
+
+
+/* ------------------ footer ------------------------ */
+
+
+.footer{
+    background: #000;
+    color: #8a8a8a;
+    font-size: 14px;
+    bottom: 0;
+    padding: 6px 0 2px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    /* z-index: 1; */
+
+}
+.footer .row{
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.footer hr{
+  border : none;
+  background: #b5b5b5;
+  height: 1%;
+  margin: 2% 0;
+}
+.footer .container .row .col .row .col a{
+    text-decoration: none;
+    cursor: pointer;
+    color: #8f8f90;
+    transition: font-weight .2s;
+}
+.footer a:hover{
+    font-weight: 600;
+}
+
+
+
+
+/* --------------------- media queries----------------------- */
+/* @media (min-width:1200px) {
+    #myCarousel p{
+        font-size: 1rem;
+        padding: 1rem;
+    }
+
+    #vision img, #goals img{
+        width: 20rem;
+        height: 20rem;
+        margin: 12rem 0 0 2rem ;
+    }
+    #vision .description{
+        padding-top: 15rem;
+    }
+    #goals .description{
+        padding-top: 12rem;
+        
+    }
+    .footer{
+        margin-top: -20rem;
+        margin-bottom: 8rem;
+    }
+    aside{
+        width: 10rem;
+        height: 21rem;
+        padding: 3rem 3rem;
+    }
+
+    #shop .owl-carousel .owl-item, .owl-item.cloned{
+        margin: 2rem !important;
+    }
+} */
+
+@media only screen and (max-width:1200px) {
+
+    #myCarousel p{
+        font-size: 1rem;
+        /* padding: 1rem; */
+    }
+
+    #vision img, #goals img{
+        width: 15rem;
+        height: 15rem;
+        margin: 12rem 0 0 2rem ;
+    }
+    #vision .description{
+        padding-top: 8rem;
+    }
+    #goals .description{
+        padding-top: 10rem;
+        
+    }
+
+    aside{
+        width: 10rem;
+        height: 21rem;
+        padding: 3rem 3rem;
+    }
+
+    #shop .owl-carousel .owl-item, .owl-item.cloned{
+        margin: 2rem !important;
+    }
+
+}
+
+
+@media only screen and (max-width:790px) {
+    #vision .description{
+        padding-top: 8rem;
+        margin-right: 10rem;
+        font-size: 1rem;
+    }
+    #goals .description{
+        padding-top: 12rem;
+    }
+}
+
+@media only screen and (max-width:600px) {
+
+    #myCarousel p{
+        font-size: 1rem;
+        padding: 1rem;
+    }
+
+    #vision img, #goals img{
+        width: 10rem;
+        height: 10rem;
+        margin: 15rem 0 0 2rem ;
+    }
+    #vision .description{
+        padding-top: 1rem;
+        font-size: 1.1rem;
+    }
+    #goals .description{
+        padding-top: 12rem;
+    }
+
+    aside{
+        width: 10rem;
+        height: 21rem;
+        padding: 3rem 3rem;
+    }
+
+    #shop .owl-carousel .owl-item, .owl-item.cloned{
+        margin-right: 1.2rem !important;
+    }
+
+}
+
+@media (max-width:600px) and (min-width:425px) {
+
+    #myCarousel p{
+        font-size: 1rem;
+        padding: 1rem;
+    }
+
+    #vision img, #goals img{
+        /* width: 5rem;
+        height: 2rem;
+        margin: 1rem 0 0 1rem ; */
+        display: none;
+    }
+    #vision .description{
+        padding-top: 3rem;
+        margin-right: 15rem;
+        font-size: 1rem;
+    }
+    #goals .description,h1{
+        
+        /* padding-top: 5rem;
+        font-size: .72rem; */
+        padding-top: 6rem;
+        margin-right: 2rem;
+        font-size: 1.1rem;
+    }
+
+    aside{
+        width: 10rem;
+        height: 21rem;
+        padding: 3rem 3rem;
+        font-size: .85rem;
+    }
+
+    #shop .owl-carousel .owl-item, .owl-item.cloned{
+        margin-left: 0.5rem !important;
+    }
+    .owl-carousel .item{
+        transform: scale(.65);
+    }
+    .owl-carousel{
+        /* margin-top: 1rem; */
+        margin: 0 0 0 0 ;
+        padding: .15rem;
+    }
+
+}
+
+@media only screen and (max-width:425px) {
+  
+    #myCarousel p{
+        font-size: 1rem;
+        padding: 1rem;
+       
+    }
+ 
+    #vision img, #goals img{
+        /* width: 5rem;
+        height: 2rem;
+        margin: 1rem 0 0 1rem ; */
+        display: none;
+    }
+    #vision .description{
+        padding-top: 5rem;
+        margin-right: 15rem;
+        font-size: .9rem;
+    }
+    #goals .description,h1{
+        
+        /* padding-top: 5rem;
+        font-size: .72rem; */
+        padding-top: 5rem;
+        margin-right: 2rem;
+        margin-top: 0rem;
+        font-size: 1.1rem;
+        margin-bottom: 5rem;
+    }
+    
+
+    aside{
+        width: 10rem;
+        height: 21rem;
+        padding: 3rem 3rem;
+        font-size: .85rem;
+    }
+
+    #shop .owl-carousel .owl-item, .owl-item.cloned{
+        margin-left: -.2rem !important;
+        /* margin-left: calc(10% -120px); */
+    }
+    .owl-carousel .item{
+        transform: scale(.65);
+    }
+    .owl-carousel{
+        /* margin-top: 1rem; */
+        /* margin: 0 0 0 0 ; */
+        margin: -3rem 0rem 0 0 ;
+        padding: .15rem;
+    }
+   .footer{
+    font-size: .5rem;
+    position: relative;
+    /* bottom: -1rem; */
+   }
+
+}

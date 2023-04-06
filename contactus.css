@@ -1,0 +1,151 @@
+*{
+    font-family: 'Open Sans', sans-serif;    
+}
+body{
+    background-color: #2F2E2E;
+    color: #F8F7F2;
+    overflow-x: hidden;
+    font-size: larger;
+}
+.tagline{
+    color: #D5BD78;
+    margin-top: -1.75rem;
+}
+.goldenbird{
+    font-family: 'Merriweather Sans', sans-serif;
+    margin: 4rem 0 2rem 4rem;
+}
+.logo{
+    margin-top: 3.5rem;
+    margin-left: 80%
+}
+.contact{
+    margin: 1rem 0 0 0rem;
+    font-size: 1rem;
+}
+.back{
+    margin: 2rem 0 0rem 3rem;
+}
+.back a{
+    text-decoration: none;
+    color: #F8F7F2;
+    transition: color .25s, font-size .25s;
+}
+.back a:hover{
+    color: #D5BD78;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+.icons i{
+    font-size:24px;
+     margin-left:1rem;
+}
+
+/* --------------------------- media queries-------------------- */
+@media (min-width:507px) and (max-width:540px){
+    .back{
+        font-size: .95rem;
+    }
+    .logo{
+        margin-top: 3rem;
+        margin-left: 60%;
+        width: 6.5rem;
+    }
+    .tagline{
+        font-size: .95rem;
+    }
+    body{
+        font-size: .85rem;
+    }
+    .icons i{
+        font-size:15px;
+        margin-left:.5rem;
+    }
+}
+@media (min-width:540px) and (max-width:768px){
+    .back{
+        font-size: .95rem;
+    }
+    .logo{
+        margin-top: 1rem;
+        margin-left: 60%;
+        width: 4.5rem;
+    }
+    .goldenbird{
+        margin: 2rem 0 0rem 2rem;
+    }
+    .tagline{
+        font-size: .75rem;
+    }
+    .contact{
+        font-size: .75rem;
+    }
+    .icons i{
+        font-size:15px;
+        margin-left:.5rem;
+    }
+}
+@media (min-width:425px) and (max-width:507px) {
+    .back{
+        font-size:.75rem;
+        margin: 2rem 0 0rem 1rem;
+    }
+    .goldenbird{
+        margin: 1.5rem 0 1rem .5rem;
+        font-size: .5rem;
+    }
+    .logo{
+        margin-top: 1rem;
+        width: 4.5rem;
+    }
+    .tagline{
+        margin-top: 0rem;
+        font-size: .75rem;
+    }
+    .contact{
+        font-size: .45rem;
+        text-align: left;
+        word-wrap: break-word;
+    }
+
+    .col-3.icons{
+       width: 26%;
+       font-size: .75rem;
+    }
+    .icons i{
+        font-size:15px;
+        margin-left:.5rem;
+    }
+    
+}
+@media screen and (max-width:424px) {
+    .back{
+       display: none;
+    }
+    .goldenbird{
+        margin: 1.5rem 0 1rem .5rem;
+        font-size: .5rem;
+    }
+    .logo{
+        margin-top: 1rem;
+        width: 4.5rem;
+    }
+    .tagline{
+        margin-top: 0rem;
+        font-size: .75rem;
+    }
+    .contact{
+        font-size: .45rem;
+        text-align: left;
+        word-wrap: break-word;
+    }
+
+    .col-3.icons{
+       width: 40%;
+       font-size: .45rem;
+    }
+    .icons i{
+        font-size:15px;
+        margin-left:.5rem;
+    }
+}
